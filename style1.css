@@ -1,0 +1,160 @@
+body.blog{
+  margin: 0;
+    padding: 0;
+    background-image: url('images/blog-1.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    height: 15vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; 
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    
+}
+
+.header-p
+{
+  min-height: 0vh;
+  width: 100%;
+  position: relative;
+
+}
+nav
+{
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: right;
+  
+}
+.nav-links-p
+{
+  flex: 1;
+  text-align: right;
+  
+  
+}
+.nav-links-p ul li{
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links-p ul li a{
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  }
+
+  .nav-links-p ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #f44336;
+    display: block;
+    margin: auto;
+    transition:0.5s;
+    ;
+  }
+  .nav-links-p ul li:hover::after{
+    width: 100%;
+}
+
+.container {
+  max-width: 800px;
+  width: 80%; /* Adjust the width as needed */
+  margin: auto;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center; /* Center the content horizontally */
+  position: absolute;
+  z-index: 1;
+  margin-top: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  overflow-y: scroll;
+  margin: 120px auto; /* Adjust the top margin as needed */
+  display: block;
+  max-height: calc(100vh - 40px); /* Subtract the top and bottom margin to calculate max-height */
+  overflow-y: auto; /* Enable vertical scrolling if the content exceeds the max-height */
+}
+h1, h2, h3 {
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+.home-btn {
+  margin: 20px auto;
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #84d952; /* Set button color */
+  color: #fff; /* Set text color */
+  text-decoration: none;
+  text-align: center;
+  border-radius: 5px;
+  width: 200px;
+  transition: background-color 0.3s ease;
+}
+
+/*---------------------------------payment------------------------------------------*/
+.payment-form {
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-row {
+  display: flex;
+}
+
+.col {
+  flex: 1;
+  margin-right: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+.form-group1 input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  background-color: #333;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #555;
+}

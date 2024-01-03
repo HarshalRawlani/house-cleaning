@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;1,200;1,400;1,500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css">
+</head>
+<body class="Pricing">
+    <section class="header-p">
+       <nav>
+        <div class="nav-links-p">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="pricing.html">Services</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+       </nav>
+    </section>
+    <section class="Services-p">
+        <div class="row">
+            <div class="service-col">
+                <h3>Cooks & Chefs</h3>
+                <img src="images/Cook.png" alt="Service Image">
+                <button class="view-pricing-btn">View Pricing</button>
+            </div>
+
+            <div class="service-col">
+                <h3>Domestic Help</h3>
+                <img src="images/House Help.png" alt="Service Image">
+                <button class="view-pricing-btn">View Pricing</button>
+            </div>
+
+            <div class="service-col">
+                <h3>All-rounders</h3>
+                <img src="images/All Rounder.png" alt="Service Image">
+                <button class="view-pricing-btn">View Pricing</button>
+            </div>
+
+            <div class="service-col">
+                <h3>Baby Sitters</h3>
+                <img src="images/baby-3.png" alt="Service Image">
+                <button class="view-pricing-btn">View Pricing</button>
+            </div>
+
+            <div class="service-col">
+                <h3>24 Hrs Live In</h3>
+                <img src="images/24hrs.png" alt="Service Image">
+                <button class="view-pricing-btn">View Pricing</button>
+            </div>
+       </div>
+</section>
+<div class="popup" id="pricingPopup">
+    <div class="popup-content">
+        <span class="close" id="closePopup">&times;</span>
+        <!-- Pricing details go here -->
+        <div class="pricing-vouchers" id="pricingVouchers">
+            <div class="voucher" data-plan="standardPlan">
+                <h3>Trial Plan</h3>
+                <p>25% Discount</p>
+                <button class="select-voucher-btn">Select</button>
+            </div>
+            <div class="voucher" data-plan="proPlan">
+                <h3>Pro Plan</h3>
+                <p>35% Discount</p>
+                <button class="select-voucher-btn">Select</button>
+            </div>
+            <div class="voucher" data-plan="premiumPlan">
+                <h3>Premium Plan</h3>
+                <p>38% Discount</p>
+                <button class="select-voucher-btn">Select</button>
+            </div>
+        </div>
+        <div class="pricing-col" id="pricingContent">
+            <div id="pricingDetails"></div>
+            
+        </div>
+       
+      
+    </div>
+</div>
+<div class="backdrop" id="backdrop"></div>
+
+
+
+
+
+<script>
+ document.addEventListener('DOMContentLoaded', function () {
+            const viewPricingButtons = document.querySelectorAll('.view-pricing-btn');
+            const pricingPopup = document.getElementById('pricingPopup');
+            const closePopup = document.getElementById('closePopup');
+            const backdrop = document.getElementById('backdrop');
+
+            viewPricingButtons.forEach(function (button) {
+                button.addEventListener('click', function () {
+                    // Show the pricing popup and backdrop
+                    pricingPopup.style.display = 'block';
+                    backdrop.style.display = 'block';
+                });
+            });
+
+            closePopup.addEventListener('click', function () {
+                // Close the pricing popup and hide the backdrop
+                pricingPopup.style.display = 'none';
+                backdrop.style.display = 'none';
+            });
+
+            backdrop.addEventListener('click', function () {
+                // Close the pricing popup and hide the backdrop when clicking outside
+                pricingPopup.style.display = 'none';
+                backdrop.style.display = 'none';
+            });
+            
+    });
+          /*-----------------voucher plan--------------------------------*/
+          document.getElementById('pricingVouchers').addEventListener('click', function (event) {
+    if (event.target.classList.contains('select-voucher-btn')) {
+        var plan = event.target.closest('.voucher').getAttribute('data-plan');
+        showDetails(plan);
+    }
+});
+
+function showDetails(plan) {
+    var pricingDetails = document.getElementById('pricingDetails');
+    var pricingCol = document.getElementById('pricingCol');
+    pricingDetails.innerHTML = ''; // Clear previous details
+
+    switch (plan) {
+        case 'standardPlan':
+            pricingDetails.innerHTML = 
+            `
+                <h2>Standard Plan</h2>
+                <div class="membership-details">
+                    <h3 class="head">1-Month Trial Membership</h3>
+                    <ul>
+                        <li>You are eligible for 1 free worker replacement</li>
+                        <li>Uniform and Welfare costs are included</li>
+                        <li>*Prices are exclusive of GST</li>
+                    </ul>
+                    <h3 class="center-text">Salary will be calculated at the next step</h3>
+                      <div class="cost-section">
+                          <div class="cost-item">
+                          <h3>Total Membership Cost</h3>
+                          <p class="cost-value">Rs 2000</p>
+                      </div>
+         <div class="cost-item">
+            <h3>Discounted Cost</h3>
+            <p class="cost-value">Rs 1500*</p>
+         </div>
+        <div class="cost-item">
+            <h3>Effective Monthly Cost</h3>
+            <p class="cost-value">Rs 1500</p>
+        </div>
+    </div>
+                </div>
+                
+            `;
+            break;
+        case 'proPlan':
+            pricingDetails.innerHTML = `
+                <h2>Pro Plan</h2>
+                <div class="membership-details">
+                    <h3 class="head">3-Month Membership</h3>
+                    <ul>
+                        <li>You are eligible for 1 free worker replacement</li>
+                        <li>Uniform and Welfare costs are included</li>
+                        <li>*Prices are exclusive of GST</li>
+                    </ul>
+                    <h3 class="center-text">Salary will be calculated at the next step</h3>
+                      <div class="cost-section">
+                          <div class="cost-item">
+                          <h3>Total Membership Cost</h3>
+                          <p class="cost-value">Rs 6865</p>
+                      </div>
+         <div class="cost-item">
+            <h3>Discounted Cost</h3>
+            <p class="cost-value">Rs 5149*</p>
+         </div>
+        <div class="cost-item">
+            <h3>Effective Monthly Cost</h3>
+            <p class="cost-value">Rs 1716</p>
+        </div>
+    </div>
+                </div>
+                
+            `;
+            break;
+        case 'premiumPlan':
+            pricingDetails.innerHTML = `
+                <h2>Preminum Plan</h2>
+                <div class="membership-details">
+                    <h3 class="head">6-Month Trial Membership</h3>
+                    <ul>
+                        <li>You are eligible for 1 free worker replacement</li>
+                        <li>Uniform and Welfare costs are included</li>
+                        <li>*Prices are exclusive of GST</li>
+                    </ul>
+                    <h3 class="center-text">Salary will be calculated at the next step</h3>
+                      <div class="cost-section">
+                          <div class="cost-item">
+                          <h3>Total Membership Cost</h3>
+                          <p class="cost-value">Rs 10306</p>
+                      </div>
+         <div class="cost-item">
+            <h3>Discounted Cost</h3>
+            <p class="cost-value">Rs 6699*</p>
+         </div>
+        <div class="cost-item">
+            <h3>Effective Monthly Cost</h3>
+            <p class="cost-value">Rs 1117</p>
+        </div>
+    </div>
+                </div>
+                
+            `;
+            break;
+    }
+
+    // Append your existing "Continue" button to pricing details
+    pricingDetails.innerHTML += '<a href="payment.html" class="continue-btn">Book Now</a>';
+  
+    // Display pricing details in pricing-col
+    pricingCol.innerHTML = pricingDetails.innerHTML;
+}
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Worker Health Insurance Form</title>
+  <link rel="stylesheet" href="insurance.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Worker Health Insurance Form</h1>
+    <h2>(कार्यकर्ता स्वास्थ्य बीमा)</h2>
+    <form target="_blank" action="https://formsubmit.co/ruchika.murade@cumminscollege.in" method="POST">
+      <div class="form-group">
+        <label for="workerName">Worker's Name/कार्यकर्ता का नाम*</label>
+        <input type="text" name="workerName" required>
+      </div>
+      <div class="form-group">
+        <label for="workerMobile">Worker's Mobile Number/कार्यकर्ता का फोन नंबर*</label>
+        <input type="tel" name="workerMobile" required>
+      </div>
+      <div class="form-group">
+        <label for="workerDOB">Worker's Date of Birth/ कार्यकर्ता की जन्म तिथि*</label>
+        <input type="text" name="workerDOB" placeholder="dd-mm-yyyy" required>
+      </div>
+      <div class="form-group">
+        <label for="workerAddress">Worker's Address/कार्यकर्ता का पता*</label>
+        <textarea name="workerAddress" rows="3" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="workerOccupation">Worker's Occupation// कार्यकर्ता का पेशा- छुट्टा काम (2-10 घंटो का काम) </label>
+        <select name="workerOccupation" required>
+          <option value="dayTime">Day time worker/कार्यकर्ता का पेशा- छुट्टा काम *</option>
+          <option value="liveIn">24hr Live-in worker/ कार्यकर्ता का पेशा- 24 घंटे काम *</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="insurancePlan">Select an Insurance Plan/एक बीमा योजना चुनें</label>
+        <select name="insurancePlan" required>
+          <option value="1Lakh">Sum Insured 1 lakh (103 rs. Monthly)/बीमा राशि 1 लाख (103 रु मासिक)</option>
+          <option value="2Lakh">Sum Insured 2 lakh (116 rs. Monthly)//बीमा राशि 2 लाख (116 रु मासिक)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Insurance Holder/बीमा धारक</label>
+        <div>
+            <input type="radio" name="insuranceHolder" value="Self"> स्वयं <br>(Self) <br>
+            <input type="radio" name="insuranceHolder" value="Selfspouse"> स्वयं + जीवनसाथी <br>(Self + Spouse) <br>
+            <input type="radio" name="insuranceHolder" value="Selfspousekids"> स्वयं + जीवनसाथी + 1 बच्चा (24 वर्ष से कम) <br>(Self + Spouse + 1 kid)(<24 yrs old) <br>
+            <input type="radio" name="insuranceHolder" value="Selfspousekids"> स्वयं + जीवनसाथी + 2 बच्चे (24 वर्ष से कम) <br>(Self + Spouse + 2 kids)<br>
+        </div>
+    </div>
+      
+      <div class="form-group">
+        <label for="filledByName">Form Filled By? (Name)/फॉर्म किसके द्वारा भरा गया है? (नाम)*</label>
+        <input type="text" name="filledByName" required>
+      </div>
+      <div class="form-group">
+        <label for="filledByNumber">Form Filled By? (Number)/फॉर्म किसके द्वारा भरा गया है? (नंबर)*</label>
+        <input type="tel" name="filledByNumber" required>
+      </div>
+      <button type="submit" class="btn btn-lg btn-dark btn-block">Submit Form</button>
+    </form>
+</div>
+  </div>
+</body>
+</html>
